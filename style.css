@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background-color: #020617;
+}
+
+header h1 {
+  margin-bottom: 8px;
+}
+
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  border-bottom: 2px solid #334155;
+  padding-bottom: 8px;
+}
+
+.project-card {
+  background-color: #020617;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-card a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #94a3b8;
+}
