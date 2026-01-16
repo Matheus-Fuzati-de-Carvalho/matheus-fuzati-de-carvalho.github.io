@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 
 <body>
@@ -39,41 +39,42 @@
     <h1 class="neon-name">Matheus Fuzati</h1>
 
     <div class="typing">
-      <span>Analytics Engineer</span>
+      <span class="text"></span>
     </div>
 
     <div class="socials">
       <a href="https://www.linkedin.com" target="_blank">
-        <img src="assets/linkedin.svg">
+        <img src="assets/linkedin.svg" alt="LinkedIn">
       </a>
       <a href="https://github.com/Matheus-Fuzati-de-Carvalho" target="_blank">
-        <img src="assets/github.svg">
+        <img src="assets/github.svg" alt="GitHub">
       </a>
       <a href="mailto:seuemail@gmail.com">
-        <img src="assets/gmail.svg">
+        <img src="assets/gmail.svg" alt="Email">
       </a>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section about">
+<section id="about" class="section about reveal">
   <div class="about-grid">
-    <img src="assets/profile.png" class="about-photo">
+    <img src="assets/profile.png" class="about-photo" alt="Matheus Fuzati">
 
-    <div>
+    <div class="about-text">
       <h2>About</h2>
       <p>
-        Profissional de dados com foco em Analytics Engineering, Data Engineering
-        e aplicações de Machine Learning. Atuo desde ingestão, modelagem e qualidade
-        de dados até análises e soluções orientadas a impacto real de negócio.
+        Profissional de dados com foco em <strong>Analytics Engineering</strong>,
+        <strong>Data Engineering</strong> e aplicações de <strong>Machine Learning</strong>.
+        Atuo desde ingestão, modelagem e qualidade de dados até análises e soluções
+        orientadas a impacto real de negócio.
       </p>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="section">
+<section id="projects" class="section reveal">
   <h2>Projects</h2>
 
   <div class="cards">
@@ -87,7 +88,7 @@
 
     <div class="card">
       <h3>Data Pipeline – GCP</h3>
-      <p>Pipeline de dados em cloud.</p>
+      <p>Pipeline de dados em Google Cloud Platform.</p>
       <a href="https://github.com/Matheus-Fuzati-de-Carvalho/data-pipeline-gcp" target="_blank">
         View on GitHub →
       </a>
@@ -96,20 +97,23 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="section">
+<section id="experience" class="section reveal">
   <h2>Experience</h2>
 
   <div class="timeline">
     <div class="job">
       <h3>Analytics Engineer</h3>
       <span>Empresa X • 2023 – Atual</span>
-      <p>Desenvolvimento de pipelines, modelagem analítica e métricas.</p>
+      <p>
+        Desenvolvimento de pipelines analíticos, modelagem de dados,
+        métricas de negócio e suporte à tomada de decisão.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section contact">
+<section id="contact" class="section contact reveal">
   <h2>Contact Me</h2>
 
   <form action="mailto:seuemail@gmail.com" method="post" enctype="text/plain">
@@ -120,6 +124,53 @@
     <button type="submit">Send Message</button>
   </form>
 </section>
+
+<!-- JS -->
+<script>
+/* Typing animation */
+const roles = [
+  "Analytics Engineer",
+  "Data Engineer",
+  "Data Scientist"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+const textEl = document.querySelector(".typing .text");
+
+function typeEffect() {
+  const current = roles[roleIndex];
+
+  if (!deleting) {
+    textEl.textContent = current.slice(0, ++charIndex);
+    if (charIndex === current.length) {
+      setTimeout(() => deleting = true, 1500);
+    }
+  } else {
+    textEl.textContent = current.slice(0, --charIndex);
+    if (charIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? 60 : 90);
+}
+typeEffect();
+
+/* Scroll reveal */
+const reveals = document.querySelectorAll('.reveal');
+function revealOnScroll() {
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 120) {
+      el.classList.add('active');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
 
 </body>
 </html>
