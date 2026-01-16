@@ -1,72 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matheus Fuzati | Data Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=2">
+
+  <!-- CSS versionado para evitar cache -->
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
+
 <body>
 
+  <!-- NAV -->
   <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">Sobre</a></li>
-      <li><a href="#projects">Projetos</a></li>
-      <li><a href="#contact">Contato</a></li>
-    </ul>
+    <div class="nav-container">
+      <span class="logo">Matheus Fuzati</span>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <section id="home" class="section home">
-  <h1>Matheus Fuzati</h1>
-  <p class="subtitle">
-    Analytics Engineering • Data Engineering • Data Science
-  </p>
-</section>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
 
-  <section id="about" class="section">
+    <div class="hero-content">
+      <img src="assets/profile.png" alt="Matheus Fuzati" class="hero-photo">
+
+      <h1>Matheus Fuzati</h1>
+      <p class="hero-subtitle">
+        Analytics Engineering • Data Engineering • Data Science
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
     <h2>Sobre</h2>
-    <p>
-      Profissional de dados com foco em engenharia, analytics engineering
-      e aplicações de machine learning. Experiência prática com pipelines,
-      arquitetura de dados e soluções orientadas a impacto.
+
+    <p class="about-text">
+      Profissional de dados com foco em engenharia, analytics engineering e
+      aplicações de machine learning. Atuação prática em pipelines de dados,
+      arquitetura analítica, qualidade de dados e soluções orientadas a impacto
+      real de negócio.
     </p>
   </section>
 
-  <section id="projects" class="section">
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
     <h2>Projetos</h2>
 
     <div class="projects-grid">
 
       <div class="project-card">
-        <h3>Chatbot Educacional</h3>
-        <p>Chatbot com IA aplicado ao contexto educacional.</p>
-        <a href="https://github.com/Matheus-Fuzati-de-Carvalho/chatbot_educacional" target="_blank">
-          GitHub →
-        </a>
+        <div class="project-bg"></div>
+        <div class="project-content">
+          <h3>Chatbot Educacional</h3>
+          <p>Chatbot com IA aplicado ao contexto educacional.</p>
+          <a href="https://github.com/Matheus-Fuzati-de-Carvalho/chatbot_educacional" target="_blank">
+            Ver no GitHub →
+          </a>
+        </div>
       </div>
 
       <div class="project-card">
-        <h3>Data Pipeline - GCP</h3>
-        <p>Pipeline de dados em Google Cloud Platform.</p>
-        <a href="https://github.com/Matheus-Fuzati-de-Carvalho/data-pipeline-gcp" target="_blank">
-          GitHub →
-        </a>
+        <div class="project-bg"></div>
+        <div class="project-content">
+          <h3>Data Pipeline – GCP</h3>
+          <p>Pipeline de dados em Google Cloud Platform.</p>
+          <a href="https://github.com/Matheus-Fuzati-de-Carvalho/data-pipeline-gcp" target="_blank">
+            Ver no GitHub →
+          </a>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
     <h2>Contato</h2>
+
     <p>
-      GitHub: <a href="https://github.com/Matheus-Fuzati-de-Carvalho" target="_blank">github.com/Matheus-Fuzati-de-Carvalho</a>
+      GitHub:
+      <a href="https://github.com/Matheus-Fuzati-de-Carvalho" target="_blank">
+        github.com/Matheus-Fuzati-de-Carvalho
+      </a>
     </p>
   </section>
 
 </body>
 </html>
-
-
-
-
