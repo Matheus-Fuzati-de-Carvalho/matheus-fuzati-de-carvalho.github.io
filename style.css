@@ -6,11 +6,8 @@
 }
 
 body {
-  background: linear-gradient(180deg, #020617, #020617, #030b2e);
-  color: #e5e7eb;
-  line-height: 1.6;
+  background: red !important;
 }
-
 /* NAV */
 nav {
   position: fixed;
@@ -133,3 +130,4 @@ h2 {
 #contact a:hover {
   text-decoration: underline;
 }
+
