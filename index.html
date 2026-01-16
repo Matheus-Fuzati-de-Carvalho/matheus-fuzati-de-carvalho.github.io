@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 
 <body>
@@ -43,14 +43,14 @@
     </div>
 
     <div class="socials">
-      <a href="https://www.linkedin.com" target="_blank">
-        <img src="assets/linkedin.svg" alt="LinkedIn">
+      <a href="https://https://www.linkedin.com/in/matheus-fuzati-de-carvalho-6a80a11a3/" target="_blank">
+        <img src="assets/linkedin.svg">
       </a>
       <a href="https://github.com/Matheus-Fuzati-de-Carvalho" target="_blank">
-        <img src="assets/github.svg" alt="GitHub">
+        <img src="assets/github.svg">
       </a>
-      <a href="mailto:seuemail@gmail.com">
-        <img src="assets/gmail.svg" alt="Email">
+      <a href="mailto:fuzatimatheus@gmail.com@gmail.com">
+        <img src="assets/gmail.svg">
       </a>
     </div>
   </div>
@@ -59,15 +59,15 @@
 <!-- ABOUT -->
 <section id="about" class="section about reveal">
   <div class="about-grid">
-    <img src="assets/profile.png" class="about-photo" alt="Matheus Fuzati">
+    <img src="assets/profile.png" class="about-photo">
 
-    <div class="about-text">
+    <div>
       <h2>About</h2>
       <p>
-        Profissional de dados com foco em <strong>Analytics Engineering</strong>,
-        <strong>Data Engineering</strong> e aplicações de <strong>Machine Learning</strong>.
-        Atuo desde ingestão, modelagem e qualidade de dados até análises e soluções
-        orientadas a impacto real de negócio.
+        Profissional de dados com foco em Analytics Engineering, Data Engineering
+        e aplicações de Machine Learning. Atuo desde ingestão, modelagem e
+        qualidade de dados até análises e soluções orientadas a impacto real
+        de negócio.
       </p>
     </div>
   </div>
@@ -100,15 +100,40 @@
 <section id="experience" class="section reveal">
   <h2>Experience</h2>
 
-  <div class="timeline">
-    <div class="job">
-      <h3>Analytics Engineer</h3>
-      <span>Empresa X • 2023 – Atual</span>
+  <div class="experience-list">
+
+    <div class="experience-card">
+      <h3>Analytics Engineering em Ambiente Cloud</h3>
       <p>
-        Desenvolvimento de pipelines analíticos, modelagem de dados,
-        métricas de negócio e suporte à tomada de decisão.
+        Desenvolvimento de pipelines analíticos, integração de múltiplas fontes
+        e construção de datasets confiáveis para consumo por áreas de negócio.
       </p>
     </div>
+
+    <div class="experience-card">
+      <h3>Construção de Pipelines de Dados Escaláveis</h3>
+      <p>
+        Criação de pipelines ETL/ELT com foco em performance, versionamento,
+        qualidade de dados e escalabilidade em ambientes cloud.
+      </p>
+    </div>
+
+    <div class="experience-card">
+      <h3>Modelagem Analítica e Métricas de Negócio</h3>
+      <p>
+        Estruturação de modelos analíticos, definição de métricas, KPIs e apoio
+        à tomada de decisão baseada em dados.
+      </p>
+    </div>
+
+    <div class="experience-card">
+      <h3>Machine Learning Aplicado</h3>
+      <p>
+        Aplicação de modelos de Machine Learning em dados reais, desde
+        preparação dos dados até avaliação e interpretação dos resultados.
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -116,7 +141,7 @@
 <section id="contact" class="section contact reveal">
   <h2>Contact Me</h2>
 
-  <form action="mailto:seuemail@gmail.com" method="post" enctype="text/plain">
+  <form action="mailto:fuzatimatheus@gmail.com" method="post" enctype="text/plain">
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="text" name="subject" placeholder="Subject">
@@ -127,39 +152,26 @@
 
 <!-- JS -->
 <script>
-/* Typing animation */
-const roles = [
-  "Analytics Engineer",
-  "Data Engineer",
-  "Data Scientist"
-];
-
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
-const textEl = document.querySelector(".typing .text");
+const roles = ["Analytics Engineer", "Data Engineer", "Data Scientist"];
+let r = 0, c = 0, del = false;
+const el = document.querySelector(".typing .text");
 
 function typeEffect() {
-  const current = roles[roleIndex];
-
-  if (!deleting) {
-    textEl.textContent = current.slice(0, ++charIndex);
-    if (charIndex === current.length) {
-      setTimeout(() => deleting = true, 1500);
-    }
+  const txt = roles[r];
+  if (!del) {
+    el.textContent = txt.slice(0, ++c);
+    if (c === txt.length) setTimeout(() => del = true, 1400);
   } else {
-    textEl.textContent = current.slice(0, --charIndex);
-    if (charIndex === 0) {
-      deleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
+    el.textContent = txt.slice(0, --c);
+    if (c === 0) {
+      del = false;
+      r = (r + 1) % roles.length;
     }
   }
-
-  setTimeout(typeEffect, deleting ? 60 : 90);
+  setTimeout(typeEffect, del ? 60 : 90);
 }
 typeEffect();
 
-/* Scroll reveal */
 const reveals = document.querySelectorAll('.reveal');
 function revealOnScroll() {
   reveals.forEach(el => {
