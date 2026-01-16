@@ -9,19 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="style.css?v=30">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
     <div class="logo">
       <span class="white">MATHEUS</span>
       <span class="blue">FUZATI</span>
     </div>
-
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -31,54 +29,44 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-overlay"></div>
-
   <div class="hero-content">
     <h1 class="neon-name">Matheus Fuzati</h1>
-
-    <div class="typing">
-      <span class="text"></span>
-    </div>
+    <div class="typing"><span class="text"></span></div>
 
     <div class="socials">
-      <a href="https://https://www.linkedin.com/in/matheus-fuzati-de-carvalho-6a80a11a3/" target="_blank">
+      <a href="https://www.linkedin.com/in/matheus-fuzati-de-carvalho-6a80a11a3/" target="_blank">
         <img src="assets/linkedin.svg">
       </a>
       <a href="https://github.com/Matheus-Fuzati-de-Carvalho" target="_blank">
         <img src="assets/github.svg">
       </a>
-      <a href="mailto:fuzatimatheus@gmail.com@gmail.com">
+      <a href="mailto:fuzatimatheus@gmail.com">
         <img src="assets/gmail.svg">
       </a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section about reveal">
+<section id="about" class="section reveal">
   <div class="about-grid">
     <img src="assets/profile.png" class="about-photo">
-
     <div>
       <h2>About</h2>
       <p>
         Profissional de dados com foco em Analytics Engineering, Data Engineering
-        e aplicações de Machine Learning. Atuo desde ingestão, modelagem e
-        qualidade de dados até análises e soluções orientadas a impacto real
-        de negócio.
+        e Machine Learning. Atuação completa em pipelines, modelagem analítica
+        e soluções orientadas a impacto real de negócio.
       </p>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section reveal">
   <h2>Projects</h2>
-
   <div class="cards">
-    <div class="card">
+    <div class="card project-card">
       <h3>Chatbot Educacional</h3>
       <p>IA aplicada ao contexto educacional.</p>
       <a href="https://github.com/Matheus-Fuzati-de-Carvalho/chatbot_educacional" target="_blank">
@@ -86,9 +74,9 @@
       </a>
     </div>
 
-    <div class="card">
+    <div class="card project-card">
       <h3>Data Pipeline – GCP</h3>
-      <p>Pipeline de dados em Google Cloud Platform.</p>
+      <p>Pipeline de dados em ambiente cloud.</p>
       <a href="https://github.com/Matheus-Fuzati-de-Carvalho/data-pipeline-gcp" target="_blank">
         View on GitHub →
       </a>
@@ -96,92 +84,55 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience" class="section reveal">
   <h2>Experience</h2>
-
   <div class="experience-list">
-
     <div class="experience-card">
       <h3>Analytics Engineering em Ambiente Cloud</h3>
-      <p>
-        Desenvolvimento de pipelines analíticos, integração de múltiplas fontes
-        e construção de datasets confiáveis para consumo por áreas de negócio.
-      </p>
+      <p>Construção de datasets confiáveis e pipelines analíticos.</p>
     </div>
 
     <div class="experience-card">
-      <h3>Construção de Pipelines de Dados Escaláveis</h3>
-      <p>
-        Criação de pipelines ETL/ELT com foco em performance, versionamento,
-        qualidade de dados e escalabilidade em ambientes cloud.
-      </p>
+      <h3>Pipelines de Dados Escaláveis</h3>
+      <p>ETL/ELT com foco em performance, versionamento e qualidade.</p>
     </div>
 
     <div class="experience-card">
-      <h3>Modelagem Analítica e Métricas de Negócio</h3>
-      <p>
-        Estruturação de modelos analíticos, definição de métricas, KPIs e apoio
-        à tomada de decisão baseada em dados.
-      </p>
+      <h3>Modelagem Analítica e KPIs</h3>
+      <p>Definição de métricas e apoio à decisão baseada em dados.</p>
     </div>
 
     <div class="experience-card">
       <h3>Machine Learning Aplicado</h3>
-      <p>
-        Aplicação de modelos de Machine Learning em dados reais, desde
-        preparação dos dados até avaliação e interpretação dos resultados.
-      </p>
+      <p>Aplicação de modelos em dados reais.</p>
     </div>
-
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section contact reveal">
-  <h2>Contact Me</h2>
-
-  <form action="mailto:fuzatimatheus@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="text" name="subject" placeholder="Subject">
-    <textarea name="message" placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+<section id="contact" class="section reveal">
+  <div class="contact-card">
+    <h2>Contact Me</h2>
+    <form action="mailto:fuzatimatheus@gmail.com" method="post" enctype="text/plain">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Subject">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 </section>
 
-<!-- JS -->
 <script>
-const roles = ["Analytics Engineer", "Data Engineer", "Data Scientist"];
-let r = 0, c = 0, del = false;
-const el = document.querySelector(".typing .text");
-
-function typeEffect() {
-  const txt = roles[r];
-  if (!del) {
-    el.textContent = txt.slice(0, ++c);
-    if (c === txt.length) setTimeout(() => del = true, 1400);
-  } else {
-    el.textContent = txt.slice(0, --c);
-    if (c === 0) {
-      del = false;
-      r = (r + 1) % roles.length;
-    }
-  }
-  setTimeout(typeEffect, del ? 60 : 90);
-}
-typeEffect();
-
-const reveals = document.querySelectorAll('.reveal');
-function revealOnScroll() {
-  reveals.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 120) {
-      el.classList.add('active');
-    }
-  });
-}
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
+const roles=["Analytics Engineer","Data Engineer","Data Scientist"];
+let i=0,c=0,d=false;
+const t=document.querySelector(".typing .text");
+(function type(){
+  const r=roles[i];
+  t.textContent=d?r.slice(0,--c):r.slice(0,++c);
+  if(c===r.length) setTimeout(()=>d=true,1400);
+  if(c===0&&d){d=false;i=(i+1)%roles.length;}
+  setTimeout(type,d?60:90);
+})();
 </script>
 
 </body>
