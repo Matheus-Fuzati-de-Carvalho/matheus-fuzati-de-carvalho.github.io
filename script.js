@@ -1,31 +1,177 @@
-const roles = [
-  "Analytics Engineer",
-  "Data Engineer",
-  "Machine Learning",
-  "Analytics & BI"
-];
-
-let i = 0;
-let j = 0;
-let deleting = false;
-const el = document.getElementById("typed-text");
-
-function loop() {
-  const word = roles[i];
-  el.textContent = deleting
-    ? word.slice(0, --j)
-    : word.slice(0, ++j);
-
-  if (!deleting && j === word.length) {
-    setTimeout(() => deleting = true, 1800);
-  }
-
-  if (deleting && j === 0) {
-    deleting = false;
-    i = (i + 1) % roles.length;
-  }
-
-  setTimeout(loop, deleting ? 60 : 90);
+:root {
+    --bg: #020617;
+    --text: #e5e7eb;
+    --blue: #38bdf8;
 }
 
-document.addEventListener("DOMContentLoaded", loop);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(6px);
+    background: rgba(2,6,23,0.7);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.navbar a {
+    margin-left: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--blue);
+}
+
+.space-bg-2 {
+    background: linear-gradient(rgba(2,6,23,.85), rgba(2,6,23,.85)), url('stars.png') center/cover fixed;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.shine {
+    font-size: 5rem;
+    color: var(--blue);
+    text-shadow: 0 0 25px var(--blue);
+}
+
+.typing-container {
+    margin-top: 15px;
+    font-size: 1.4rem;
+}
+
+.cursor {
+    animation: blink .8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.social-icons a {
+    margin: 15px;
+    font-size: 2rem;
+    color: var(--blue);
+}
+
+.about {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 35px rgba(56,189,248,.6);
+}
+
+.projects {
+    padding: 120px 10%;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #020617;
+    border: 2px solid rgba(56,189,248,.4);
+    padding: 30px;
+    border-radius: 20px;
+    transition: .4s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 35px rgba(56,189,248,.6);
+}
+
+.experience {
+    padding: 120px 10%;
+}
+
+.experience-card {
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 25px;
+    border: 2px solid var(--blue);
+    background: #020617;
+    box-shadow: 0 0 20px rgba(56,189,248,.3);
+}
+
+.contact {
+    padding: 120px 10%;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border-radius: 15px;
+    background: transparent;
+    border: 2px solid var(--blue);
+    color: white;
+}
+
+.contact-form button {
+    padding: 15px;
+    border-radius: 30px;
+    background: var(--blue);
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.footer {
+    padding: 40px;
+    text-align: center;
+}
