@@ -1,33 +1,31 @@
 const roles = [
   "Analytics Engineer",
   "Data Engineer",
-  "Machine Learning Engineer",
-  "Data Science"
+  "Machine Learning",
+  "Analytics & BI"
 ];
 
-let roleIndex = 0;
-let charIndex = 0;
+let i = 0;
+let j = 0;
 let deleting = false;
-const typedText = document.getElementById("typed-text");
+const el = document.getElementById("typed-text");
 
-function typeEffect() {
-  const current = roles[roleIndex];
-  const speed = deleting ? 60 : 90;
+function loop() {
+  const word = roles[i];
+  el.textContent = deleting
+    ? word.slice(0, --j)
+    : word.slice(0, ++j);
 
-  if (!deleting) {
-    typedText.textContent = current.slice(0, ++charIndex);
-    if (charIndex === current.length) {
-      setTimeout(() => deleting = true, 1800);
-    }
-  } else {
-    typedText.textContent = current.slice(0, --charIndex);
-    if (charIndex === 0) {
-      deleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-    }
+  if (!deleting && j === word.length) {
+    setTimeout(() => deleting = true, 1800);
   }
 
-  setTimeout(typeEffect, speed);
+  if (deleting && j === 0) {
+    deleting = false;
+    i = (i + 1) % roles.length;
+  }
+
+  setTimeout(loop, deleting ? 60 : 90);
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+document.addEventListener("DOMContentLoaded", loop);
