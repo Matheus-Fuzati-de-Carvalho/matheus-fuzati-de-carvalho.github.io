@@ -53,7 +53,7 @@ body {
 /* HERO */
 .home {
   padding: 160px 10% 120px;
-  background: url("assets/images/space-bg-2.png") center/cover no-repeat;
+  background: url("assets/stars.png") center/cover no-repeat;
 }
 
 .home-container {
@@ -140,3 +140,4 @@ body {
     order: -1;
   }
 }
+
